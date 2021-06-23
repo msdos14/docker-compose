@@ -15,8 +15,8 @@ services:
     command:
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
-      - "--entrypoints.web.address=:1341"
-      - "--entrypoints.websecure.address=:1342"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
       - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
       - "--certificatesresolvers.le.acme.tlschallenge=true"
       - "--certificatesresolvers.le.acme.email=${LETS_ENCRYPT_EMAIL}"
@@ -27,6 +27,6 @@ services:
     restart: always
     ports:
       - "1342:443"
-      - "1341:80"
+      - "80:80"
 volumes:  
   letsencrypt:
