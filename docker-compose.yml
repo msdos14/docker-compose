@@ -3,12 +3,12 @@ services:
   hq:
     image: 'surveysolutions/surveysolutions'
     ports:
-     - "1341:80"
+     - "80:80"
     depends_on:
      - "db"
     environment: 
       HQ_ConnectionStrings__DefaultConnection: 'Server=db;Port=5432;User Id=postgres;Password=pg_password;Database=SurveySTUDIA'
-      HQ_Headquarters__BaseUrl: http://${HQ_HOST}:1341
+      HQ_Headquarters__BaseUrl: http://${HQ_HOST}
     volumes:
       - ./data/app:/app/AppData
     restart: always
