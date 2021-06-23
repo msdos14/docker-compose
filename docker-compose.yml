@@ -3,7 +3,7 @@ services:
   hq:
     image: 'surveysolutions/surveysolutions'
     ports:
-     - "80:80"
+     - "1341:80"
     depends_on:
      - "db"
     environment: 

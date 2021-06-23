@@ -2,7 +2,7 @@ version: '3'
 services:
   hq:
     environment: 
-      HQ_Headquarters__BaseUrl: https://${HQ_HOST}
+      HQ_Headquarters__BaseUrl: https://${HQ_HOST}:1342
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.hq.rule=Host(`${HQ_HOST}`)"
@@ -15,8 +15,8 @@ services:
     command:
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
-      - "--entrypoints.web.address=:80"
-      - "--entrypoints.websecure.address=:443"
+      - "--entrypoints.web.address=:1341"
+      - "--entrypoints.websecure.address=:1342"
       - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
       - "--certificatesresolvers.le.acme.tlschallenge=true"
       - "--certificatesresolvers.le.acme.email=${LETS_ENCRYPT_EMAIL}"
@@ -26,7 +26,7 @@ services:
     - "/var/run/docker.sock:/var/run/docker.sock:ro"
     restart: always
     ports:
-      - "443:443"
-      - "80:80"
+      - "1342:443"
+      - "1341:80"
 volumes:  
   letsencrypt:
