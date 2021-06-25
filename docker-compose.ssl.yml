@@ -2,7 +2,7 @@ version: '3'
 services:
   hq:
     environment: 
-      HQ_Headquarters__BaseUrl: https://${HQ_HOST}:1342
+      HQ_Headquarters__BaseUrl: https://${HQ_HOST}
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.hq.rule=Host(`${HQ_HOST}`)"
