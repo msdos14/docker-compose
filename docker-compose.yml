@@ -11,7 +11,7 @@ services:
       HQ_Headquarters__BaseUrl: http://${HQ_HOST}
     volumes:
       - ./data/app:/app/AppData
-    restart: always
+    restart: unless-stopped
 
   db:
     image: "postgres"
