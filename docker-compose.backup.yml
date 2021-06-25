@@ -10,7 +10,7 @@ services:
         - db
     environment:
       POSTGRES_HOST: db
-      POSTGRES_DB: SurveySolutions
+      POSTGRES_DB: SurveySTUDIA
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: pg_password
       #:  - POSTGRES_PASSWORD_FILE=/run/secrets/db_password <-- alternative for POSTGRES_PASSWORD (to use with docker secrets)

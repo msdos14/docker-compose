@@ -27,6 +27,5 @@ services:
     restart: always
     ports:
       - "1342:443"
-      - "80:80"
 volumes:  
   letsencrypt:
