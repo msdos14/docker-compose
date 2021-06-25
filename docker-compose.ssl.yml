@@ -21,12 +21,12 @@ services:
       - "--certificatesresolvers.le.acme.tlschallenge=true"
       - "--certificatesresolvers.le.acme.email=${LETS_ENCRYPT_EMAIL}"
       - "--certificatesresolvers.le.acme.storage=/letsencrypt/acme.json"
+      - --api.insecure=true # <== Enabling insecure api, NOT RECOMMENDED FOR PRODUCTION
+      - --api.dashboard=true # <== Enabling the dashboard to view services, middlewares, routers, etc...
     volumes:
     - "letsencrypt:/letsencrypt"
     - "/var/run/docker.sock:/var/run/docker.sock:ro"
-    restart: always
-    api:
-      dashboard: true
+    restart: always      dashboard: true
       insecure: true
     ports:
       - "443:443"
