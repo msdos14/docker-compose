@@ -12,6 +12,7 @@ describe('Overview Stats', () => {
   })
 
   it('can download overview', () => {
+    cy.wait(1000)
     cy.get('.download-report-as > :nth-child(1)').click()
   })
 })

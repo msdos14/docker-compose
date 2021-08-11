@@ -14,6 +14,6 @@ describe('Quantity Stats', () => {
   it('can download quantity stats', () => {
     cy.get('#navbar > :nth-child(2) > :nth-child(1) > .dropdown-toggle').click()
     cy.get('.open > .dropdown-menu > :nth-child(7) > a').click()
-    cy.get('[href="/primary/api/ReportDataApi/QuantityBySupervisors?draw=2&start=0&length=-1&search[value]=&search[regex]=false&questionnaireId=&questionnaireVersion=&reportType=0&columnCount=7&period=d&from=2021-08-10&supervisorId=&timezoneOffsetMinutes=-180&pageIndex=1&pageSize=50000&exportType=excel"]').click()
+    cy.get('a').contains('XLSX').click()
   })
 })
